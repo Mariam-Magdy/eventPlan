@@ -1,0 +1,16 @@
+.cont{
+    margin: 20px 0;
+    background-color: rgb(240, 240, 240);
+}
+
+.logo{
+    background-image: url("/assets/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.home{
+    background-image: url("/assets/home.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
