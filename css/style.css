@@ -1,16 +1,52 @@
-.cont{
-    margin: 20px 0;
-    background-color: rgb(240, 240, 240);
+* {
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
-.logo{
-    background-image: url("/assets/logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: bisque;
+}
+body .navbar {
+  margin-bottom: 30px;
+  background-color: black;
+}
+body .container {
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  height: 80%;
+}
+body .container #carousel {
+  height: 100%;
+}
+body .container #carousel .inslide {
+  height: 100%;
+  text-align: center;
+}
+body .container #carousel .inslide .text {
+  color: #a51174;
+  text-align: center;
+}
+body .title {
+  margin: 10px;
+  text-align: center;
+}
+body .cardsGroup {
+  margin: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+body .cardsGroup .selfCard {
+  margin: 30px;
+  width: 15%;
+}
+body .cardsGroup .selfCard .cardImg {
+  width: 100%;
+  height: 50%;
 }
 
-.home{
-    background-image: url("/assets/home.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-}
+/*# sourceMappingURL=style.css.map */
