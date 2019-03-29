@@ -35,15 +35,21 @@ body .title {
   text-align: center;
   color: #a51174;
 }
-body .card {
+body .row {
+  width: 100%;
+}
+body .row .card {
   width: 15rem;
   margin: 0 auto;
   float: none;
 }
-body .card .card-img-top {
+body .row .card .card-img-top {
   width: 100%;
   height: 20vw;
   object-fit: cover;
+}
+body .row .card h4 {
+  color: #a51174;
 }
 
 /*# sourceMappingURL=style.css.map */
