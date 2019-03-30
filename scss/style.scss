@@ -1,5 +1,6 @@
 $color1 : rgb(165, 17, 116);
 $color2 : white;
+$color3 : rgb(165, 159, 159);
 
 * {
     box-sizing: border-box;
@@ -62,7 +63,135 @@ body {
                 color: $color1;
             }
         }
-    } 
+    }
+    
+    .main-timeline {
+        overflow: hidden;
+        position: relative;
+
+        &:before {
+            content: "";
+            width: 10px;
+            height: 100%;
+            border: 3px solid $color1;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .timeline{
+            width: 50%;
+            padding: 10px 60px 10px 100px;
+            float: right;
+            position: relative;
+
+            &:before{
+                content: "";
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: $color3;
+                border: 5px solid $color2;
+                box-shadow: 0 0 1px 5px $color3;
+                position: absolute;
+                top: 42px;
+                left: -20px;
+            }
+
+            &:nth-child(2n){
+                padding: 10px 100px 10px 60px;
+                text-align: right;
+
+                &:before{
+                    left: auto;
+                    right: -20px;
+                }
+            }
+
+            &:nth-child(2n) .year{
+                padding-right: 50px;
+                border-radius: 10px 10px 0 10px;
+                left: auto;
+                right: -20px;
+
+                &:before{
+                    border-left: none;
+                    border-right: 20px solid transparent;
+                    left: auto;
+                    right: 0;
+                }
+            }
+
+            &:nth-child(2){
+                margin-top: 140px;
+            }
+
+            &:nth-child(odd){
+                margin-top: -140px 0 0 0;
+            }
+
+            &:nth-child(even){
+                margin-bottom: 60px;
+            }
+
+            &:first-child, &:last-child:nth-child(even){
+                margin: 0; 
+            }
+
+            .timeline-content{
+                display: block;
+                background: $color3;
+                padding: 70px 30px 20px;
+                box-shadow: 0 0 10px rgpa(0,0,0,0.2) inset;
+                position: relative;
+
+                &:hover{
+                    text-decoration: none;
+                }
+
+                .year{
+                    display: block;
+                    width: 80%;
+                    height: 50px;
+                    background: $color1;
+                    padding: 0 0 0 50px;
+                    font-size: 30px;
+                    font-weight: 800;
+                    color: $color2;
+                    line-height: 50px;
+                    box-shadow: 0 0 20px rgba(0,0,0,0.4) inset;
+                    border-radius: 10px 10px 10px 0;
+                    position: absolute;
+                    top:20px;
+                    left: -20px;
+
+                    &:before{
+                        content: "";
+                        border-top: 40px solid $color1;
+                        border-left: 20px solid transparent;
+                        border-bottom: 20px solid transparent;
+                        position: absolute;
+                        bottom: -60px;
+                        left: 0;
+                        }
+                }
+
+                .titleX{
+                    font-size: 18px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: $color1;
+                }
+
+                .discription{
+                    font-size: 14px;
+                    color: #6f6f6f;
+                    margin: 0 0 5px 0;
+                }
+            }
+        }
+    }
 }
 
 
