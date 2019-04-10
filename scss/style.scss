@@ -1,4 +1,4 @@
-$color1 : rgb(165, 17, 116);
+$color1 : rgb(35, 101, 163);
 $color2 : white;
 $color3 : rgb(165, 159, 159);
 
@@ -13,31 +13,51 @@ body {
     height: 100vh;
     background-color: $color2;
 
-    .navbar {
-        margin-bottom: 30px;
-        background-color: $color1;
-    }
+    header {
+        height: auto;
+        width: auto;
 
-    .container {
-        margin: auto;
-        padding: 0;
-        width: 80%;
-        height: 80%;
+        .navbar {
+            margin-bottom: 30px;
+            background-color: $color1;
+            position: fixed;
+            width: 100%;
+            z-index: 1;
+            top: 0px;
+        }
 
-        #carousel {
-            height: 100%;
-
-            .inslide {
+    
+        .container-fluid {
+            // margin: auto;`
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+    
+            #carousel {
                 height: 100%;
-                text-align: center;
-
-                .text {
-                    color: $color2;
+    
+                .inslide {
+                    height: 100vh;
                     text-align: center;
+                    
+                    img {
+                        height: 100vh;
+                        width: 100%;
+                    }
+
+                    .text {
+                        color: $color2;
+                        text-align: center;
+                    }
+
+                    .textSlideshow {
+                        color: $color1;
+                        text-shadow: 0 0 0 5px;
+                    }
                 }
-            }
-        } 
-   }
+            } 
+       }
+    }
 
    .title {
         margin: 10px;
@@ -45,8 +65,78 @@ body {
         color: $color1;
    }
 
-   .row {
+   .eventsContainer {
+       height: 70vh;
+       display: flex;
+       justify-content: space-around;
+       margin-top: 60px;
+       text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.829);
+
+        .firstEvent, .thirdEvent {
+            display: inline;
+            text-align: center;
+            padding-top: 5%;
+            color: $color3;
+
+            img {
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                cursor: pointer;
+
+                &:hover{
+                    height: 250px;
+                    width: 250px;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: $color3;
+                display: flex;
+                flex-wrap: wrap;
+
+                &:hover{
+                    color: $color1;
+                }
+            }
+        }
+
+        .secondEvent {
+            float: left;
+            text-align: center;
+            color: $color3;
+
+            img {
+                height: 250px;
+                width: 250px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                cursor: pointer;
+
+                &:hover {
+                    height: 300px;
+                    width: 300px;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: $color3;
+                display: flex;
+                flex-wrap: wrap;
+
+                &:hover{
+                    color: $color1;
+                }
+            }
+        }
+    }
+
+   #row {
         width: 100%;
+        // display: none;
    
         .card {
             width: 15rem;
@@ -71,22 +161,22 @@ body {
 
         &:before {
             content: "";
-            width: 10px;
+            width: 1.5%;
             height: 100%;
             border: 3px solid $color1;
             position: absolute;
-            top: 40px;
+            top: 10%;
             left: 50%;
-            transform: translateX(-50%)
+            transform: translateX(-50%);
         }
 
-        .timeline{
+        .timeline {
             width: 50%;
-            padding: 10px 60px 10px 100px;
+            padding: 1.5% 10% 1.5% 10%;
             float: right;
             position: relative;
 
-            &:before{
+            &:before {
                 content: "";
                 width: 40px;
                 height: 40px;
@@ -95,78 +185,38 @@ body {
                 border: 5px solid $color2;
                 box-shadow: 0 0 1px 5px $color3;
                 position: absolute;
-                top: 42px;
+                top: 30%;
                 left: -20px;
             }
 
-            &:nth-child(2n){
-                padding: 10px 100px 10px 60px;
-                text-align: right;
-
-                &:before{
-                    left: auto;
-                    right: -20px;
-                }
-            }
-
-            &:nth-child(2n) .year{
-                padding-right: 50px;
-                border-radius: 10px 10px 0 10px;
-                left: auto;
-                right: -20px;
-
-                &:before{
-                    border-left: none;
-                    border-right: 20px solid transparent;
-                    left: auto;
-                    right: 0;
-                }
-            }
-
-            &:nth-child(2){
-                margin-top: 140px;
-            }
-
-            &:nth-child(odd){
-                margin-top: -140px 0 0 0;
-            }
-
-            &:nth-child(even){
-                margin-bottom: 60px;
-            }
-
-            &:first-child, &:last-child:nth-child(even){
-                margin: 0; 
-            }
-
-            .timeline-content{
+            .timeline-content {
                 display: block;
                 background: $color3;
                 padding: 70px 30px 20px;
                 box-shadow: 0 0 10px rgpa(0,0,0,0.2) inset;
                 position: relative;
 
-                &:hover{
+                &:hover {
                     text-decoration: none;
                 }
 
-                .year{
+                .year {
                     display: block;
-                    width: 80%;
+                    width: 90%;
                     height: 50px;
                     background: $color1;
                     padding: 0 0 0 50px;
-                    font-size: 30px;
-                    font-weight: 800;
+                    font-size: 20px;
+                    font-weight: 500;
                     color: $color2;
-                    line-height: 50px;
+                    line-height: 20px;
                     box-shadow: 0 0 20px rgba(0,0,0,0.4) inset;
                     border-radius: 10px 10px 10px 0;
                     position: absolute;
                     top:20px;
                     left: -20px;
 
-                    &:before{
+                    &:before {
                         content: "";
                         border-top: 40px solid $color1;
                         border-left: 20px solid transparent;
@@ -177,18 +227,45 @@ body {
                         }
                 }
 
-                .titleX{
+                .titleX {
                     font-size: 18px;
                     font-weight: 600;
                     text-transform: uppercase;
                     color: $color1;
                 }
 
-                .discription{
+                .discription {
                     font-size: 14px;
                     color: #6f6f6f;
                     margin: 0 0 5px 0;
                 }
+            }
+
+            &:nth-child(2n) { 
+                text-align: right;
+
+                &:before {
+                    left: auto;
+                    right: -20px;
+                }
+            }
+
+            &:nth-child(2n) .year {
+                padding-right: 50px;
+                border-radius: 10px 10px 0 10px;
+                left: auto;
+                right: -20px;
+
+                &:before {
+                    border-left: none;
+                    border-right: 20px solid transparent;
+                    left: auto;
+                    right: 0;
+                }
+            }
+
+            &:nth-of-type(even) {
+                margin-bottom: 60px;
             }
         }
     }
